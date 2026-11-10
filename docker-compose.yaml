@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    container_name: autodidacta_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./data/autodidacta.db
+    volumes:
+      - ./data:/app/data
